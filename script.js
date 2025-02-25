@@ -7,6 +7,38 @@ document.addEventListener('DOMContentLoaded', function() {
         mirror: false
     });
 
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle.querySelector('i');
+    
+    // Check for saved theme preference or use device preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Set initial theme
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+    
+    // Toggle theme on click
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        let newTheme;
+        
+        if (currentTheme === 'dark') {
+            newTheme = 'light';
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+            document.documentElement.removeAttribute('data-theme');
+        } else {
+            newTheme = 'dark';
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+        
+        localStorage.setItem('theme', newTheme);
+    });
+
     // Typing Animation
     const typedTextElement = document.getElementById('typed-text');
     const cursorElement = document.querySelector('.cursor');
