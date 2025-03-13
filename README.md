@@ -66,7 +66,6 @@ A virtual library application for managing video game collections. Users can cat
 
 **Technologies used:** JavaScript, TypeScript, CSS, HTML, Dokku
 
-**Live Demo:** [Try it yourself here](http://george-collection.devacademy.nz/)
 
 ## 🌱 What I'm Currently Learning
 
