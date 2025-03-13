@@ -1,8 +1,0 @@
-This directory contains images for the portfolio website.
-
-For the project images, you should replace the placeholder images with actual screenshots of your projects:
-
-1. travel-blog.jpg - Screenshot of your Travel Blog project
-2. games-collection.jpg - Screenshot of your Games Collection project
-
-You can also add a profile photo to use in the About section. 
